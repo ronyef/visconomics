@@ -46,8 +46,8 @@
       </div> -->
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
         <chart-card
-          :chart-data="dataCompletedTasksChart.data"
-          :chart-options="dataCompletedTasksChart.options"
+          :chart-data="tempData.data"
+          :chart-options="tempData.options"
           :chart-type="'Line'"
           data-background-color="green">
           <template slot="content">
@@ -100,6 +100,30 @@ export default{
         return tempArr
       })
       return sensorArr
+    },
+    tempData() {
+      var temp = this.rVisco
+      return {
+        data: {
+          labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
+          series: [
+            temp 
+          ]
+        },
+        options: {
+          lineSmooth: this.$Chartist.Interpolation.cardinal({
+            tension: 0
+          }),
+          low: 0,
+          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          chartPadding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+          }
+        }
+      }
     }
   },
   data () {

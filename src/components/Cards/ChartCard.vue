@@ -50,6 +50,12 @@ export default {
         }
       }
     },
+    chartLabel: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
     dataBackgroundColor: {
       type: String,
       default: ''

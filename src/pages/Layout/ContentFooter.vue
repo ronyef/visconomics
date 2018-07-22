@@ -24,7 +24,7 @@
             </ul>
         </nav>
         <div class="copyright text-center">
-          &copy; {{ new Date().getFullYear() }} <a href="https://www.techenomics.net" target="_blank"Techenomics</a>, Techenomics
+          &copy; {{ new Date().getFullYear() }} <a href="https://www.techenomics.net" target="_blank">Techenomics</a>
         </div>
     </div>
   </footer>
